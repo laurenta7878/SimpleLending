@@ -77,7 +77,7 @@ contract AaveLender {
         STAKED_TOKEN_ADDRESS.transferFrom(msg.sender, address(this), amount);
 
         // Approve the Aave Pool contract to manage the deposited DAI
-        daiToken.approve(AAVE_POOL_ADDRESS, amount);
+        STAKED_TOKEN_ADDRESS.approve(AAVE_POOL_ADDRESS, amount);
 
         // Emit an event for staking
         emit Staked(msg.sender, amount);
@@ -99,7 +99,7 @@ contract AaveLender {
         STAKED_TOKEN_ADDRESS.transfer(msg.sender, amount);
 
         // Approve the Aave Pool contract to manage the deposited DAI
-        daiToken.approve(AAVE_POOL_ADDRESS, amount);
+        STAKED_TOKEN_ADDRESS.approve(AAVE_POOL_ADDRESS, amount);
 
         // Emit an event for withdrawal
         emit Withdrawn(msg.sender, amount);
